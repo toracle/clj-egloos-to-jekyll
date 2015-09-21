@@ -1,7 +1,6 @@
 /.lein-failures
 /.nrepl-port
-/data/content-list/my-file.html
-/data/list/my-file.html
+/data/
 /target/
 *~
 *.html
