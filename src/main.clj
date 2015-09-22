@@ -184,3 +184,8 @@
              (with-open [wrtr (io/writer out-file)]
                (.write wrtr body))))
           article-file-list)))
+
+(save-all-content-list)
+(save-article-urls)
+(save-all-article)
+(convert-all-article-to-markdown)
