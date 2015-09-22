@@ -1,4 +1,4 @@
-Scrape and convert [http://egloos.com](Egloos) articles to Jekyll post format.
+Scrape and convert [Egloos](http://egloos.com) articles to Jekyll post format.
 
 This software is licensed under a Simplified BSD license.
 
