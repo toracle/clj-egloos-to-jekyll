@@ -1,4 +1,4 @@
-(ns clj-egloos-dump)
+(ns clj-egloos-to-jekyll)
 
 (require '[org.httpkit.client :as http])
 (require '[clojure.java.io :as io])
@@ -14,7 +14,7 @@
 
 (def articles-dir "data/article/")
 
-(def articles-output-dir "data/article-markdown/")
+(def articles-output-dir "data/_posts/")
 
 
 ;; Get Content List
