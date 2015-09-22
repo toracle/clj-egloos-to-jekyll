@@ -1,4 +1,5 @@
-(ns clj-egloos-to-jekyll)
+(ns clj-egloos-to-jekyll
+  (:gen-class))
 
 (require '[org.httpkit.client :as http])
 (require '[clojure.java.io :as io])
@@ -8,9 +9,9 @@
 
 (def target-egloos-url "http://toracle.egloos.com")
 
-(def content-list-dir "data/content-list/")
-
 (def articles-url-data-path "data/article-urls.dat")
+
+(def content-list-dir "data/content-list/")
 
 (def articles-dir "data/article/")
 
@@ -73,13 +74,12 @@
 
 (defn save-all-article []
   (let
-      [article-urls (read-string(slurp articles-url-data-path))]
+      [article-urls (read-string (slurp articles-url-data-path))]
     (map (fn [url]
            (save-webpage-to-file url (format "%sarticle-%s.html"
                                              articles-dir
                                              (get-page-num-from-url url))))
-         article-urls))
-  true)
+         article-urls)))
 
 (defn convert-dom-to-markdown [root]
   (let
@@ -185,7 +185,9 @@
                (.write wrtr body))))
           article-file-list)))
 
-(save-all-content-list)
-(save-article-urls)
-(save-all-article)
-(convert-all-article-to-markdown)
+(defn -main []
+  (do
+    (save-all-content-list)
+    (save-article-urls)
+    (save-all-article)
+    (convert-all-article-to-markdown)))
